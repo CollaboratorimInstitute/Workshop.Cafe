@@ -1,4 +1,37 @@
-## Welcome to GitHub Pages
+## Workshop Cafe Table Light Documentation
+
+### Index
+- Overview and Purpose
+- Componants
+- Hardware Breakdown
+- Hardware Assembly
+- Installation
+- Particle Usage and Managment
+- Particle Code
+- Troubleshooting
+
+### Overview and Purpose
+
+### Componants
+
+### Hardware Breakdown
+
+### Hardware Assembly
+
+### Installation
+
+### Particle Usage and Managment
+
+### Particle Code
+
+### Troubleshooting
+
+
+
+
+
+
+## Editor reference
 
 You can use the [editor on GitHub](https://github.com/CRB404/Workshop_Cafe_Table_Lights/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
