@@ -18,6 +18,10 @@
 
 ### Hardware Assembly
 
+![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/LED_soulder_diagram-01.png?token=AIrXDGFhLe7FAtZf_CbSFwp_yViFdxOxks5Yv4n5wA%3D%3D)
+
+![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/Port_soulder_diagram-01.png?token=AIrXDC_IEZZu9-3cAmqO1etSh4BQPsiuks5Yv4o1wA%3D%3D)
+
 ### Installation
 
 ### Particle Usage and Managment
