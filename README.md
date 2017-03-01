@@ -1,25 +1,54 @@
 ## Workshop Cafe Table Light Documentation
 
 ### Index
-- Overview and Purpose
-- Componants
-- Hardware Breakdown
-- Hardware Assembly
-- Installation
-- Particle Usage and Managment
-- Particle Code
-- Troubleshooting
+- [Overview and Purpose](https://github.com/CRB404/Workshop_Cafe_Table_Lights#overview-and-purpose)
+- [Components](https://github.com/CRB404/Workshop_Cafe_Table_Lights#components)
+- [Hardware Breakdown](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-breakdown)
+- [Hardware Assembly](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-assembly)
+- [Installation](https://github.com/CRB404/Workshop_Cafe_Table_Lights#installation)
+- [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment)
+- [Particle Code](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-code)
+- [Troubleshooting](https://github.com/CRB404/Workshop_Cafe_Table_Lights#troubleshooting)
 
 ### Overview and Purpose
+This is a repository of information regarding the assembly and installation of custom lights and their controller purpose built for the Workshop Cafe. You can find reference material and links for ordering all components as well as detailed instructions on how to reproduce light pucks and control boards. Also included is a guide to installation and how to manage the particle account associated with the control boards. The last section of the documentation contains commented code and suggestions on changes that might be useful for future teams as well as general system troubleshooting notes.
 
-### Componants
+If a question surfaces that this document does not answer, please feel free to email me questions at hello@adamlukasik.com.
+
+### Components
+The following is a list of all related componets and links where to purchase them. (as of march 2017)
+
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+
+To any further editor of this document, please try to keep these links upto date.
 
 ### Hardware Breakdown
+The hardware is broken down into two primary pieces. The first are the boards. A single board consists of a particle photon, a 5 volt 10 amp powersupply, a custom PCB (file inlcuded in repo), a screw terminal, a group of headers and 8 female ethernet ports. 
+
+The second are the light pucks. A single puck is made using a Neopixel Jewel which is a circular configuration of 7 RGB Neopixel LEDs along with multi color wire and a female ethernet port. The puck also requires a 1 inch diameter acrylic circle, .25 inch thick, and an ethernet cable at the apropriate length from the puck to the control board. The entire puck minus the ethernet cable must also be encased in heat shrink.
+
+The different pieces are made to be as modular as possible and are made to be easily incoperated into table tops or housings such as the ones used in the first installation at the Workshop Cafe. The modularity is ideal for changing spaces and replacement of parts that might break or ware down.
 
 ### Hardware Assembly
+Hardware assembly happens in to stages, one stage for the puck, another for the boards. 
 
+**Puck Assembly**
 ![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/LED_soulder_diagram-01.png?token=AIrXDGFhLe7FAtZf_CbSFwp_yViFdxOxks5Yv4n5wA%3D%3D)
 
+**Board Assembly**
 ![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/Port_soulder_diagram-01.png?token=AIrXDC_IEZZu9-3cAmqO1etSh4BQPsiuks5Yv4o1wA%3D%3D)
 
 ### Installation
