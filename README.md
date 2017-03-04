@@ -48,6 +48,7 @@ The different pieces are made to be as modular as possible and are made to be ea
 Hardware assembly happens in two stages, one stage for the puck, another for the boards. Above are all the necessary electronic parts. 
 
 **Puck Assembly**
+
 In order to assemble a light puck it is important to cut 3 short lengths of different color wire about 3 inches long and strip the ends so the wire inside is exposed. 
 
 You will need:
@@ -73,6 +74,7 @@ Make sure to check every puck you made to ensure the solder is strong and you ha
 Finally, hot glue the acrylic disk to the front face of the NeoPixel. Make sure to only use a small dab of hot glue, you barely need any and **too much heat will damage the lights**. Lastly slip the heatshrink over the whole part so that the acrylic fills one end and the ethernet connection is exposed on the other. Use the heat gun to slowly shrink the tubbing around your new light part.
 
 **Board Assembly**
+
 In order to assemble a control board you will need to have some practice [soldering](https://www.youtube.com/watch?v=oqV2xU1fee8). This important becuase a poor solder joint on the board will create issues that will be hard to troubleshoot. Make sure to practice at it if you are new to electronics. 
 
 You will need:
@@ -91,6 +93,22 @@ The first step is to solder the 8 ethernet ports to the board. There may seem li
 
 ![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/Port_soulder_diagram-01.png?token=AIrXDC_IEZZu9-3cAmqO1etSh4BQPsiuks5Yv4o1wA%3D%3D)
 Next turn the board over and solder the far left two pins of each connector to the board, you can ignore the rest.
+
+Now get your particle photon and any headers you might need, here we are showing you a photon that requires you to solder headers onto it but they can be purcahsed with headers already attached. You will need female headers for your control board though.
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board1.png)
+
+Next place your headers onto the boards and solder them into place, you will likely need to cut your headers down to size with the snips. **Make sure you have counted and cut correctly or there may be unforseen issues**. 
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board2.png)
+
+After you have your boards soldered together, place the photon onto the headers. All that is left is to connect the board to power. Take the power supply and connect the power cord as shown in the image below, black to the L port, white to the N port, and green to the ground port, that's the port with the lines and no letters. These ports are screw terminals so you will need to unscrew them with your screwdriver and then place the wires in the space now open. Then you clamp the wire down by tightening the screw as tight as possible.
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/power1.png)
+Next take your red and black wires and connect them to the power supply. The black connects to -V and the red to +V. Feel free to coat the wire connections with hot glue. This makes them much more secure and lowers the risk of them pulling out. **Be sure you connected everything correctly first though or else you wasted a power supply**.
+
+Lastly you wil need to solder the small screw terminal onto the control board.
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/power2.png)
+Then simply use your screw driver to connect the red wire to the left port and the black wire to the right port. 
+
+Your control board is done and can be connected to the pucks and flashed with the correct code. How to flash code is covered in [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment).
 
 ### Installation
 
