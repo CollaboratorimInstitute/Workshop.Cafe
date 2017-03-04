@@ -43,13 +43,54 @@ The second are the light pucks. A single puck is made using a Neopixel Jewel whi
 The different pieces are made to be as modular as possible and are made to be easily incoperated into table tops or housings such as the ones used in the first installation at the Workshop Cafe. The modularity is ideal for changing spaces and replacement of parts that might break or ware down.
 
 ### Hardware Assembly
-Hardware assembly happens in to stages, one stage for the puck, another for the boards. 
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/parts.png)
+
+Hardware assembly happens in two stages, one stage for the puck, another for the boards. Above are all the necessary electronic parts. 
 
 **Puck Assembly**
+In order to assemble a light puck it is important to cut 3 short lengths of different color wire about 3 inches long and strip the ends so the wire inside is exposed. 
+
+You will need:
+- 3 different colored wires with both ends stripped
+- 1 NeoPixel
+- 1 ethernet connector
+- about 3 inches of 1inch heat shrink
+- 1 sanded acrylic 1 inch disk
+- 1 ethernet cat 5e cable of appropriate length (measure the rough distance from the puck to the control board)
+- soldering iron
+- wire snips
+- wire strippers
+- hot glue gun
+- heat gun
+
+Fist [solder](https://www.youtube.com/watch?v=oqV2xU1fee8) the three different colored wires onto the NeoPixel and ethernet conector. In the diagram below I use a dark blue wire for ground, a light blue and white wire for power or voltage (this apears on the NeoPixel as 5v) and an orange wire for data. These colors reflect the colors used in our initial build so feel free to use any color you like just make sure they are consistant across all the pucks you make. 
+
 ![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/LED_soulder_diagram-01.png?token=AIrXDGFhLe7FAtZf_CbSFwp_yViFdxOxks5Yv4n5wA%3D%3D)
+First start by soldering to the NeoPixel, the holes are also printed onto the front and back of the component. After that take the ethernet connector and clip off the center 5 pins leaving the two on the left and the one on the right intact as displayed in the diagram. Make sure you are looking at the connector so that the pins are facing up and the port is facing away from you. Then solder the data pin to the far right pin. Next solder that ground wire to the far left pin. Lastly solder the power (5v) pin to the center left pin.
+
+Make sure to check every puck you made to ensure the solder is strong and you have atached the correct pin to the correct wire. This step is where most errors occur so **take your time**. To test solder strength lightly tug on the wire while holding the component, if it is weak it will break. Don't worry if that happens simply try again.
+
+Finally, hot glue the acrylic disk to the front face of the NeoPixel. Make sure to only use a small dab of hot glue, you barely need any and **too much heat will damage the lights**. Lastly slip the heatshrink over the whole part so that the acrylic fills one end and the ethernet connection is exposed on the other. Use the heat gun to slowly shrink the tubbing around your new light part.
 
 **Board Assembly**
+In order to assemble a control board you will need to have some practice [soldering](https://www.youtube.com/watch?v=oqV2xU1fee8). This important becuase a poor solder joint on the board will create issues that will be hard to troubleshoot. Make sure to practice at it if you are new to electronics. 
+
+You will need:
+- 1 Printed Control Board or PCB for short
+- 1 Particle Photon
+- 8 ethernet connectors
+- power supply and power cable, provided with supply
+- 2 wires with ends stripped, I recomend black and red
+- soldering iron
+- wire snips
+- wire strippers
+- hot glue gun (optional)
+- small screwdriver
+
+The first step is to solder the 8 ethernet ports to the board. There may seem like a lot of holes but acutally this step is very easy. Simply take each ethernet conector and place it with the pins up and the port facing away from you, now **ben the far right pin down away from the other pins** like in the diagram below. Next place all the connectors in their places along the edge of the board. The pin that was bent back will be very obviously ontop of an extrahole that is elongated. Solder that pin the the hole it is sitting on as in the diagram.
+
 ![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/Port_soulder_diagram-01.png?token=AIrXDC_IEZZu9-3cAmqO1etSh4BQPsiuks5Yv4o1wA%3D%3D)
+Next turn the board over and solder the far left two pins of each connector to the board, you can ignore the rest.
 
 ### Installation
 
