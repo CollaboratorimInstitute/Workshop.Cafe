@@ -1,6 +1,6 @@
-## Workshop Cafe Table Light Documentation
+# Workshop Cafe Table Light Documentation
 
-### Index
+## Index
 - [Overview and Purpose](https://github.com/CRB404/Workshop_Cafe_Table_Lights#overview-and-purpose)
 - [Components](https://github.com/CRB404/Workshop_Cafe_Table_Lights#components)
 - [Hardware Breakdown](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-breakdown)
@@ -10,12 +10,12 @@
 - [Particle Code](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-code)
 - [Troubleshooting](https://github.com/CRB404/Workshop_Cafe_Table_Lights#troubleshooting)
 
-### Overview and Purpose
+## Overview and Purpose
 This is a repository of information regarding the assembly and installation of custom lights and their controller purpose built for the Workshop Cafe. You can find reference material and links for ordering all components as well as detailed instructions on how to reproduce light pucks and control boards. Also included is a guide to installation and how to manage the particle account associated with the control boards. The last section of the documentation contains commented code and suggestions on changes that might be useful for future teams as well as general system troubleshooting notes.
 
 If a question surfaces that this document does not answer, please feel free to email me questions at hello@adamlukasik.com.
 
-### Components
+## Components
 The following is a list of all related componets and links where to purchase them. (as of march 2017)
 
 - [Particle Photon Board](https://store.particle.io/#photon)
@@ -35,19 +35,19 @@ The following is a list of all related componets and links where to purchase the
 
 To any further editor of this document, please try to keep these links upto date.
 
-### Hardware Breakdown
+## Hardware Breakdown
 The hardware is broken down into two primary pieces. The first are the boards. A single board consists of a particle photon, a 5 volt 10 amp powersupply, a custom PCB (file inlcuded in repo), a screw terminal, a group of headers and 8 female ethernet ports. 
 
 The second are the light pucks. A single puck is made using a Neopixel Jewel which is a circular configuration of 7 RGB Neopixel LEDs along with multi color wire and a female ethernet port. The puck also requires a 1 inch diameter acrylic circle, .25 inch thick, and an ethernet cable at the apropriate length from the puck to the control board. The entire puck minus the ethernet cable must also be encased in heat shrink.
 
 The different pieces are made to be as modular as possible and are made to be easily incoperated into table tops or housings such as the ones used in the first installation at the Workshop Cafe. The modularity is ideal for changing spaces and replacement of parts that might break or ware down.
 
-### Hardware Assembly
+## Hardware Assembly
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/parts.png)
 
 Hardware assembly happens in two stages, one stage for the puck, another for the boards. Above are all the necessary electronic parts. 
 
-**Puck Assembly**
+### Puck Assembly
 
 In order to assemble a light puck it is important to cut 3 short lengths of different color wire about 3 inches long and strip the ends so the wire inside is exposed. 
 
@@ -73,7 +73,7 @@ Make sure to check every puck you made to ensure the solder is strong and you ha
 
 Finally, hot glue the acrylic disk to the front face of the NeoPixel. Make sure to only use a small dab of hot glue, you barely need any and **too much heat will damage the lights**. Lastly slip the heatshrink over the whole part so that the acrylic fills one end and the ethernet connection is exposed on the other. Use the heat gun to slowly shrink the tubbing around your new light part.
 
-**Board Assembly**
+### Board Assembly
 
 In order to assemble a control board you will need to have some practice [soldering](https://www.youtube.com/watch?v=oqV2xU1fee8). This important becuase a poor solder joint on the board will create issues that will be hard to troubleshoot. Make sure to practice at it if you are new to electronics. 
 
@@ -110,13 +110,110 @@ Then simply use your screw driver to connect the red wire to the left port and t
 
 Your control board is done and can be connected to the pucks and flashed with the correct code. How to flash code is covered in [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment).
 
-### Installation
+## Installation
 
-### Particle Usage and Managment
+## Particle Usage and Managment
 
-### Particle Code
+## Particle Code
+The code we created to run on each particle is compleately uniform. Every board is flashed with the same logic. You can find the code []()
 
-### Troubleshooting
+```
+// Seat 1 ****************************************************************************************************
+
+    // set light to occupied
+    case 0: // case 0 corellates to "green1"
+      if (stateController[0] == 1) { // check state
+        for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
+          strip0.setPixelColor(i, 0, 255, 0); strip0.setBrightness(20); strip0.show(); delay(1); // defines new color and brightness
+        }
+        return 0;
+      }
+
+      else if (stateController[0] != 1){ // check state
+        stateController[0] = 1; // set state to 1 (occupied)
+
+        for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
+          strip0.setPixelColor(i, 0, 255, 0); // defines new color
+        }
+
+        // animates the light with a pluse using the occupied color
+        for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        return 0;
+      }
+
+      break;
+
+    // set light to blink and then return to correct state
+    case 1: // case 1 corellates to "pulse1"
+      for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
+        strip0.setPixelColor(i, 250, 0, 0); // defines new color
+      }
+
+      // animates the light with a long pluse using the pulse color
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+      for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+
+      if (stateController[0] == 1) { // check if state is occupied
+        for (int i = 0; i < strip0.numPixels(); i++) {
+          strip0.setPixelColor(i, 0, 255, 0); strip0.setBrightness(20); strip0.show(); delay(1); // resets color to state color
+        }
+        return 0;
+      }
+
+      else if (stateController[0] == 2){ // check if state is UN occupied
+        for (int i = 0; i < strip0.numPixels(); i++) {
+          strip0.setPixelColor(i, 255, 255, 255); strip0.setBrightness(20); strip0.show(); delay(1); // resets color to state color
+        }
+        return 0;
+      }
+
+      else if (stateController[0] == 0) { // check if state is off
+        for (int i = 0; i < strip0.numPixels(); i++) {
+          strip0.setPixelColor(i, 0, 0, 0); strip0.setBrightness(0); strip0.show(); delay(1); // resets color to state color
+        }
+        return 0;
+      }
+
+      break;
+
+    // set light to UN occupied
+    case 2: // case 2 corellates to "white1"
+      if (stateController[0] == 2) { // check state
+        for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
+          strip0.setPixelColor(i, 255, 255, 255); strip0.setBrightness(20); strip0.show(); delay(1); // defines new color and brightness
+        }
+        return 0;
+      }
+
+      else if (stateController[0] != 2){ // check state
+        stateController[0] = 2; // set state to 2 (UN occupied)
+
+        for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
+          strip0.setPixelColor(i, 255, 255, 255); // defines new color
+        }
+        
+        // animates the light with a pluse using the occupied color
+        for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
+        return 0;
+      }
+
+      break;
+```
+
+## Troubleshooting
 
 
 
