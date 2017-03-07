@@ -117,8 +117,7 @@ Your control board is done and can be connected to the pucks and flashed with th
 ## Particle Code
 The code we created to run on each particle is compleately uniform. Every board is flashed with the same logic. You can find the code []()
 
-`
-// Seat 1 ****************************************************************************************************
+`// Seat 1 ****************************************************************************************************
 
     // set light to occupied
     case 0: // case 0 corellates to "green1"
