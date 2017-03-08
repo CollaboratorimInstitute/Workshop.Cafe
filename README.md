@@ -112,12 +112,31 @@ Your control board is done and can be connected to the pucks and flashed with th
 
 ## Installation
 
+Installation begins with collecting all necessary parts. In order to install 8 lights you wil need:
+- 1 control board
+- 8 light pucks
+- 1 particle photon
+- 1 power supply
+- 8 lengths of ethernet wire that are close to the exact distance between puck and control board
+- 1 component enclosure
+- 4 metal light enclosures
+
+Begin by making sure your photon is correctly plugged into the the control board and the power supply is connected via the screw terminals. If this all sounds fuzzy then look [here](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-assembly).
+
+Next set the 
+
 ## Particle Usage and Managment
 
 ## Particle Code
-The code we created to run on each particle is compleately uniform. Every board is flashed with the same logic. You can find the code []()
+The code we created to run on each particle is compleately uniform. Every board is flashed with the same logic. You can find the code [here]().
 
-`// Seat 1 ****************************************************************************************************
+The code controls the color and animation behavior of each of the 8 connected NeoPixel pucks. The main functional section of the code is contained in the function ***TableNote***. The code is formated to be workable in a C++ enviroment such as the one for Arduino and the Particle Photon. ***TableNote*** contains a switch function that relates to an array of known commands. Every Photon board has these commands programmed into the array.
+
+`String cmd[] = {"green1", "pulse1", "white1", "green2", "pulse2", "white2", "green3", "pulse3", "white3", "green4", "pulse4", "white4", "green5", "pulse5", "white5", "green6", "pulse6", "white6", "green7", "pulse7", "white7", "green8", "pulse8", "white8", "off1", "off2", "off3", "off4", "off5", "off6", "off7", "off8"};`
+
+The switch statement then runs through 31 cases, each relating to the array position of the command. The following is a break down of all the command logic for ***seat 1***. The logic repeats for each puck.
+
+### Occupied (case 0)
 
     // set light to occupied
     case 0: // case 0 corellates to "green1"
@@ -143,6 +162,10 @@ The code we created to run on each particle is compleately uniform. Every board 
       }
 
       break;
+
+The first case checks the stateController array, looking for a value of 0. 1 or 2. If the value is set as 1 then it populates the puck with green light. If the stateController array is any other value then it sets the controller value to 1 and animates the light with green.
+
+### Pulse (Case 1)
 
     // set light to blink and then return to correct state
     case 1: // case 1 corellates to "pulse1"
@@ -185,6 +208,10 @@ The code we created to run on each particle is compleately uniform. Every board 
       }
 
       break;
+      
+The second case animates the puck with red light by pulsing the light. It then checks the stateController array for a value and resets the color to correlate to the corresponding state.
+
+### UN occupied (Case 2)
 
     // set light to UN occupied
     case 2: // case 2 corellates to "white1"
@@ -210,49 +237,19 @@ The code we created to run on each particle is compleately uniform. Every board 
       }
 
       break;
-`
+
+The third case checks the stateController array, looking for a value of 0. 1 or 2. If the value is set as 2 then it populates the puck with white light. If the stateController array is any other value then it sets the controller value to 2 and animates the light with white.
+
+### Off State (Case 24)
+
+      // off Seat 1
+          case 24:
+            stateController[0] = 0;
+            for (int i = 0; i < strip0.numPixels(); i++) {
+              strip0.setPixelColor(i, 0, 0, 0); strip0.setBrightness(0); strip0.show(); delay(1);
+            }
+            break;
+
+The off state is triggered when the stateController has a value of 0. This then sets the puck color and brightness to 0.
 
 ## Troubleshooting
-
-
-
-
-
-
-## Editor reference
-
-You can use the [editor on GitHub](https://github.com/CRB404/Workshop_Cafe_Table_Lights/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CRB404/Workshop_Cafe_Table_Lights/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
