@@ -66,7 +66,7 @@ You will need:
 
 Fist [solder](https://www.youtube.com/watch?v=oqV2xU1fee8) the three different colored wires onto the NeoPixel and ethernet conector. In the diagram below I use a dark blue wire for ground, a light blue and white wire for power or voltage (this apears on the NeoPixel as 5v) and an orange wire for data. These colors reflect the colors used in our initial build so feel free to use any color you like just make sure they are consistant across all the pucks you make. 
 
-![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/LED_soulder_diagram-01.png?token=AIrXDGFhLe7FAtZf_CbSFwp_yViFdxOxks5Yv4n5wA%3D%3D)
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/LED_soulder_diagram-01.png)
 First start by soldering to the NeoPixel, the holes are also printed onto the front and back of the component. After that take the ethernet connector and clip off the center 5 pins leaving the two on the left and the one on the right intact as displayed in the diagram. Make sure you are looking at the connector so that the pins are facing up and the port is facing away from you. Then solder the data pin to the far right pin. Next solder that ground wire to the far left pin. Lastly solder the power (5v) pin to the center left pin.
 
 Make sure to check every puck you made to ensure the solder is strong and you have atached the correct pin to the correct wire. This step is where most errors occur so **take your time**. To test solder strength lightly tug on the wire while holding the component, if it is weak it will break. Don't worry if that happens simply try again.
@@ -91,21 +91,27 @@ You will need:
 
 The first step is to solder the 8 ethernet ports to the board. There may seem like a lot of holes but acutally this step is very easy. Simply take each ethernet conector and place it with the pins up and the port facing away from you, now **ben the far right pin down away from the other pins** like in the diagram below. Next place all the connectors in their places along the edge of the board. The pin that was bent back will be very obviously ontop of an extrahole that is elongated. Solder that pin the the hole it is sitting on as in the diagram.
 
-![Image](https://raw.githubusercontent.com/CRB404/Workshop_Cafe_Table_Lights/master/Port_soulder_diagram-01.png?token=AIrXDC_IEZZu9-3cAmqO1etSh4BQPsiuks5Yv4o1wA%3D%3D)
+![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/Port_soulder_diagram-01.png)
 Next turn the board over and solder the far left two pins of each connector to the board, you can ignore the rest.
 
 Now get your particle photon and any headers you might need, here we are showing you a photon that requires you to solder headers onto it but they can be purcahsed with headers already attached. You will need female headers for your control board though.
+
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board1.png)
 
 Next place your headers onto the boards and solder them into place, you will likely need to cut your headers down to size with the snips. **Make sure you have counted and cut correctly or there may be unforseen issues**. 
+
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board2.png)
 
 After you have your boards soldered together, place the photon onto the headers. All that is left is to connect the board to power. Take the power supply and connect the power cord as shown in the image below, black to the L port, white to the N port, and green to the ground port, that's the port with the lines and no letters. These ports are screw terminals so you will need to unscrew them with your screwdriver and then place the wires in the space now open. Then you clamp the wire down by tightening the screw as tight as possible.
+
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/power1.png)
+
 Next take your red and black wires and connect them to the power supply. The black connects to -V and the red to +V. Feel free to coat the wire connections with hot glue. This makes them much more secure and lowers the risk of them pulling out. **Be sure you connected everything correctly first though or else you wasted a power supply**.
 
 Lastly you wil need to solder the small screw terminal onto the control board.
+
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/power2.png)
+
 Then simply use your screw driver to connect the red wire to the left port and the black wire to the right port. 
 
 Your control board is done and can be connected to the pucks and flashed with the correct code. How to flash code is covered in [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment).
