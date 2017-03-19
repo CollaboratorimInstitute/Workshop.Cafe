@@ -1,0 +1,483 @@
+<!doctype html>
+<title>Note - Sparanoid</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content=筆記・ノート・TL;DR>
+<meta name=theme-color content=#a212d1>
+<link rel=alternate href=/feed.xml type=application/atom+xml>
+<link rel=apple-touch-icon href=/apple-touch-icon.png>
+<link rel=icon href=/favicon.png type=image/png>
+<link rel=icon href="data:image/svg+xml;utf8,<svg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><title>Sparanoid</title><defs><path d='M90 165c41.42 0 75-33.58 75-75s-33.58-75-75-75-75 33.58-75 75 33.58 75 75 75zm0-10c35.9 0 65-29.1 65-65s-29.1-65-65-65-65 29.1-65 65 29.1 65 65 65zm0-4.167c33.597 0 60.833-27.236 60.833-60.833 0-33.597-27.236-60.833-60.833-60.833-33.597 0-60.833 27.236-60.833 60.833 0 33.597 27.236 60.833 60.833 60.833zm0-18.333c23.472 0 42.5-19.028 42.5-42.5S113.472 47.5 90 47.5 47.5 66.528 47.5 90s19.028 42.5 42.5 42.5z' id='a'/></defs><g fill='none' fill-rule='evenodd'><circle fill='#FFF' cx='90' cy='90' r='90'/><mask id='b' fill='#fff'><use xlink:href='#a'/></mask><use fill='#A212D1' xlink:href='#a'/><path d='M0 0h180v180H0z' mask='url(#b)' fill='#A212D1'/></g></svg>"
+    sizes=any type=image/svg+xml>
+    <link rel=mask-icon href=/mask-icon.svg color=#a212d1>
+    <link rel=manifest href=/manifest.json>
+    <style>
+        *,
+        :after,
+        :before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            text-size-adjust: none;
+            text-rendering: optimizelegibility;
+            image-rendering: optimizequality;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #fff
+        }
+
+        body {
+            padding: 0 24vw;
+            margin: 0 auto 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans GB", Arial, sans-serif;
+            font-size: 1.6vw;
+            line-height: 1.42857143;
+            color: #000;
+            background: #fff;
+            transition: all .2s ease
+        }
+
+        @media (max-width:1080px) {
+            body {
+                padding-left: 8vw;
+                padding-right: 8vw;
+                font-size: 2.24vw
+            }
+        }
+
+        @media (max-width:640px) {
+            body {
+                padding-left: 4vw;
+                padding-right: 4vw;
+                font-size: 3.84vw
+            }
+        }
+
+        @media (max-width:400px) {
+            body {
+                font-size: 5.12vw
+            }
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            transition: color .5s ease, border-color .5s ease, background .5s ease, opacity 1.5s ease
+        }
+
+        a:focus,
+        a:hover {
+            transition: color .1s ease, border-color .1s ease, background .1s ease, opacity .1s ease;
+            text-decoration: underline;
+            -webkit-text-decoration-skip: ink;
+            text-decoration-skip: ink
+        }
+
+        ::-webkit-input-placeholder {
+            color: #000;
+            opacity: .2
+        }
+
+        ::-moz-placeholder {
+            color: #000;
+            opacity: .2
+        }
+
+        :-ms-input-placeholder {
+            color: #000;
+            opacity: .2
+        }
+
+        ::placeholder {
+            color: #000;
+            opacity: .2
+        }
+
+        :focus::-webkit-input-placeholder {
+            color: #a212d1
+        }
+
+        :focus::-moz-placeholder {
+            color: #a212d1
+        }
+
+        :focus:-ms-input-placeholder {
+            color: #a212d1
+        }
+
+        :focus::placeholder {
+            color: #a212d1
+        }
+
+        .navigation {
+            padding-top: 1.4vmax;
+            padding-bottom: 1.4vmax;
+            margin-right: -1.1em;
+            margin-left: -1.1em;
+            font-size: 60%;
+            font-weight: 700;
+            letter-spacing: .45em;
+            text-transform: uppercase
+        }
+
+        .navigation li {
+            display: inline-block;
+            line-height: 2;
+            list-style: none
+        }
+
+        .navigation li a {
+            padding: .5em 1.2em
+        }
+
+        .navigation li a:focus,
+        .navigation li a:hover {
+            color: #a212d1;
+            text-decoration: none
+        }
+
+        .current a {
+            color: #a212d1
+        }
+
+        .content {
+            margin-bottom: 16vmin
+        }
+
+        .content:after,
+        .content:before {
+            display: table;
+            content: ""
+        }
+
+        .content:after {
+            clear: both
+        }
+
+        .content article>:last-child {
+            margin-bottom: 0!important
+        }
+
+        .content article>:last-child>:last-child {
+            margin-bottom: 0!important
+        }
+
+        .content article>:last-child>:last-child>:last-child {
+            margin-bottom: 0!important
+        }
+
+        .content article>:last-child>:last-child>:last-child>:last-child {
+            margin-bottom: 0!important
+        }
+
+        .content .page-content>:first-child {
+            margin-top: 0
+        }
+
+        .content .page-content>:first-child>:first-child {
+            margin-top: 0
+        }
+
+        .content a {
+            font-weight: 700
+        }
+
+        .content a:has(>code) {
+            -webkit-text-decoration-color: #00cc80;
+            text-decoration-color: #00cc80
+        }
+
+        .content header {
+            display: flex;
+            min-height: calc(100vh - 5.6vmax - 5ex);
+            padding-top: 10vmin;
+            padding-bottom: 10vmin;
+            margin-bottom: 16vmin;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0, 0, 0, .02);
+            padding-left: 24vw;
+            padding-right: 24vw;
+            margin-left: -24vw;
+            margin-right: -24vw
+        }
+
+        @media (max-width:1080px) {
+            .content header {
+                min-height: calc(50vh - 1.4vmax * 2 - 3ex);
+                padding-top: 16vmin;
+                padding-bottom: 16vmin;
+                padding-left: 8vw;
+                padding-right: 8vw;
+                margin-left: -8vw;
+                margin-right: -8vw
+            }
+        }
+
+        @media (max-width:640px) {
+            .content header {
+                padding-left: 4vw;
+                padding-right: 4vw;
+                margin-left: -4vw;
+                margin-right: -4vw
+            }
+        }
+
+        .content header h1 {
+            font-size: 360%;
+            font-weight: 700;
+            letter-spacing: -.04em;
+            margin-left: -2px;
+            -webkit-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+            line-height: 1.1
+        }
+
+        @media (max-width:640px) {
+            .content header h1 {
+                font-size: 280%
+            }
+        }
+
+        .content header small {
+            display: block;
+            margin-top: 2vmin
+        }
+
+        .leading-indent-fix {
+            text-indent: -.39em
+        }
+
+        .leading-indent-fix--single-quotes {
+            text-indent: -.28em
+        }
+
+        h1.leading-indent-fix--single-quotes {
+            text-indent: -.24em
+        }
+
+        .list {
+            display: block;
+            margin: 0 0 .4rem
+        }
+
+        .list h1 {
+            font-size: 360%;
+            font-weight: 700;
+            letter-spacing: -.04em;
+            font-size: 200%;
+            line-height: 1.1;
+            opacity: 1;
+            margin: 0
+        }
+
+        @media (max-width:640px) {
+            .list h1 {
+                font-size: 180%
+            }
+        }
+
+        @media (max-width:640px) {
+            .list .external {
+                display: none
+            }
+        }
+
+        .external .dot {
+            display: inline-block;
+            width: .7rem;
+            height: .7rem;
+            margin: 0 .1em;
+            vertical-align: middle;
+            background: #000;
+            border-radius: 50%;
+            transition: transform .4s ease
+        }
+
+        .external:focus .dot,
+        .external:hover .dot {
+            transform: scale(1.4)
+        }
+
+        .footer {
+            padding: 0 0 16vmin;
+            font-size: 75%;
+            text-transform: lowercase
+        }
+
+        .footer ul li {
+            display: inline
+        }
+
+        .footer ul li:after {
+            padding: 0 .6vw;
+            content: " / ";
+            opacity: .3
+        }
+
+        .footer ul li:last-child:after {
+            content: none
+        }
+
+        @media print {
+            *,
+            :after,
+            :before {
+                background: 0 0!important;
+                color: #000!important;
+                box-shadow: none!important;
+                text-shadow: none!important
+            }
+            body {
+                padding: 10mm!important;
+                margin: 0!important
+            }
+            a,
+            a:visited {
+                text-decoration: none
+            }
+            .content header {
+                min-height: 0;
+                padding-bottom: 0
+            }
+            .content .page-content {
+                max-width: 100%!important
+            }
+            .content .page-content a[href]:after {
+                content: " (" attr(href) ")";
+                font-weight: 400
+            }
+            .footer,
+            .navigation {
+                display: none
+            }
+        }
+    </style>
+    <link rel=canonical href=https://sparanoid.com/note/>
+    <meta property=og:type content=article>
+    <meta property=og:site_name content=Sparanoid>
+    <meta property=og:title content=Note>
+    <meta property=og:url content=https://sparanoid.com/note/>
+    <meta property=og:description content=筆記・ノート・TL;DR>
+    <meta property=og:image content=https://sparanoid.com/logo.png>
+    <meta name=twitter:card content=summary_large_image>
+    <meta name=twitter:site content=@sparanoid>
+    <meta name=twitter:creator content=@tunghsiao>
+    <nav class=navigation>
+        <ul>
+            <li> <a href=/> Sparanoid </a>
+            </li>
+            <li> <a href=/work/> Work </a>
+            </li>
+            <li class=current> <a href=/note/> Note </a>
+            </li>
+            <li> <a href=/about/> About </a>
+            </li>
+        </ul>
+    </nav>
+    <main class=content role=main>
+        <article>
+            <header>
+                <h1 title=Note data-title=Note> Note<span class="dot dot--post"> </span> </h1> <small>筆記・ノート・TL;DR</small> </header>
+            <div class=page-content>
+                <section class=list>
+                    <h1> <a href=/note/dmarc/ >DMARC</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/http2-and-ecdsa-cipher-suites/ >HTTP/2 and ECDSA Cipher Suites</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/public-key-pinning-and-hpkp-reporting/ >Public Key Pinning / HPKP Reporting</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/cloudfront-cost-control/ >CloudFront Cost Control</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/apple-music-playlists/ >Apple Music Playlists</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/ansible-advanced-lineinfile/ >Ansible Advanced lineinfile</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/ansible/ >Ansible</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/amazon-s3-cloudfront/ >Amazon S3 × CloudFront</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/shutdown-like-a-boss/ >Shutdown Like a Boss</a> <a href=http://shutdownlikeaboss.com/ class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/chinese-copywriting-guidelines/ >Chinese Copywriting Guidelines</a> <a href=https://github.com/sparanoid/chinese-copywriting-guidelines class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/ocsp-stapling-nginx/ >OCSP Stapling and Nginx</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/spdy-draft-2-nginx/ >SPDY Draft 2 and Nginx</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/ala-5.0/ >A List Apart 5.0</a> <a href=http://alistapart.com/article/a-list-apart-relaunches-new-features-new-design class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/3.1-billion-in-a-day/ >$3.1 Billion in a Day</a> <a href=http://westiseast.co.uk/blog/taobao-sales-19-billion-bonanza/ class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/playing-with-ocsp-stapling/ >Playing with OCSP Stapling</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/playing-with-spdy-draft-2/ >Playing with SPDY Draft 2</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/safari-6-gets-faster/ >Safari 6 Gets Faster</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/big-typography-dynasty/ >Big Typography Dynasty</a> </h1> </section>
+                <section class=list>
+                    <h1 class="leading-indent-fix leading-indent-fix--single-quotes"> <a href=/note/free-dribbble-invite/ >‘Free’ Dribbble Invite</a> <a href="http://www.v2ex.com/t/40433?r=sparanoid" class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/i-dont-get-art/ >I Don’t “Get” Art</a> <a href="http://news.ycombinator.com/item?id=4124275" class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/minimalist-syndrome/ >Minimalist Syndrome</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/nite/ >NITE</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/cyrconplex/ >cyrconlex</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/nv/ >Notational Velocity</a> <a href=http://notational.net/ class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/brand-new/ >Brand New</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/lindsay-koinaka-2/ >lindsay-koinaka 2.0</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/lindsay-koinaka/ >lindsay-koinaka</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/lesters-plugins-in-chinese/ >Lester’s Plugins in Chinese</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/need-more-space/ >Need More Space?</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/bugmirror/ >BugMirror</a> <a href=http://uri.cat/software/BugMirror/ class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/7zip-sourceforge-cca07/ >SF.net CCA 2007 Winner</a> <a href=http://sourceforge.net/blog/cca07/ class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/a-new-keyboard/ >A New Keyboard</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/7-zip-portable/ >7-Zip Portable</a> <a href=http://portableapps.com/apps/utilities/7-zip_portable class=external><span class=dot> </span></a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/segoe-ui/ >Segoe UI</a> </h1> </section>
+                <section class=list>
+                    <h1> <a href=/note/hello-world/ >Hello World</a> </h1> </section>
+            </div>
+        </article>
+    </main>
+    <footer class=footer>
+        <ul>
+            <li><a href=/>Sparanoid</a>
+            </li>
+            <li><a href=https://sparanoid.com/lab/amsf/ title="Almace Scaffolding">AMSF</a></li>
+            <li><a href=https://sparanoid.com/lab/amsf/theme-curtana.html title=Curtana>Curtana</a></li>
+            <li><a href=/email-signup/>Email</a>
+            </li>
+            <li><a href=/feed.xml title="Feed - Atom (The Atom Syndication Format)">Atom</a></li>
+        </ul>
+    </footer>
+    <script>
+        navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) && document.body.classList.add("system--apple")
+    </script>
+    <script></script>
+    <script>
+        "serviceWorker" in navigator && "sparanoid.com" === window.location.hostname && navigator.serviceWorker.register("/service-worker.js").then(function(e) {
+            console.log("ServiceWorker registration successful with scope: ", e.scope)
+        }).catch(function(e) {
+            console.log("ServiceWorker registration failed: ", e)
+        })
+    </script>
