@@ -36,7 +36,7 @@ The following is a list of all related componets and links where to purchase the
 To any further editor of this document, please try to keep these links upto date.
 
 ## Hardware Breakdown
-The hardware is broken down into two primary pieces. The first are the boards. A single board consists of a particle photon, a 5 volt 10 amp powersupply, a custom PCB (file inlcuded in repo), a screw terminal, a group of headers and 8 female ethernet ports. 
+The hardware is broken down into two primary pieces. The first are the boards. A single board consists of a particle photon, a 5 volt 10 amp powersupply, a custom PCB (file inlcuded in repo), a screw terminal, a group of headers and 8 female ethernet ports.
 
 The second are the light pucks. A single puck is made using a Neopixel Jewel which is a circular configuration of 7 RGB Neopixel LEDs along with multi color wire and a female ethernet port. The puck also requires a 1 inch diameter acrylic circle, .25 inch thick, and an ethernet cable at the apropriate length from the puck to the control board. The entire puck minus the ethernet cable must also be encased in heat shrink.
 
@@ -45,11 +45,11 @@ The different pieces are made to be as modular as possible and are made to be ea
 ## Hardware Assembly
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/parts.png)
 
-Hardware assembly happens in two stages, one stage for the puck, another for the boards. Above are all the necessary electronic parts. 
+Hardware assembly happens in two stages, one stage for the puck, another for the boards. Above are all the necessary electronic parts.
 
 ### Puck Assembly
 
-In order to assemble a light puck it is important to cut 3 short lengths of different color wire about 3 inches long and strip the ends so the wire inside is exposed. 
+In order to assemble a light puck it is important to cut 3 short lengths of different color wire about 3 inches long and strip the ends so the wire inside is exposed.
 
 You will need:
 - 3 different colored wires with both ends stripped
@@ -64,7 +64,7 @@ You will need:
 - hot glue gun
 - heat gun
 
-Fist [solder](https://www.youtube.com/watch?v=oqV2xU1fee8) the three different colored wires onto the NeoPixel and ethernet conector. In the diagram below I use a dark blue wire for ground, a light blue and white wire for power or voltage (this apears on the NeoPixel as 5v) and an orange wire for data. These colors reflect the colors used in our initial build so feel free to use any color you like just make sure they are consistant across all the pucks you make. 
+Fist [solder](https://www.youtube.com/watch?v=oqV2xU1fee8) the three different colored wires onto the NeoPixel and ethernet conector. In the diagram below I use a dark blue wire for ground, a light blue and white wire for power or voltage (this apears on the NeoPixel as 5v) and an orange wire for data. These colors reflect the colors used in our initial build so feel free to use any color you like just make sure they are consistant across all the pucks you make.
 
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/LED_soulder_diagram-01.png)
 First start by soldering to the NeoPixel, the holes are also printed onto the front and back of the component. After that take the ethernet connector and clip off the center 5 pins leaving the two on the left and the one on the right intact as displayed in the diagram. Make sure you are looking at the connector so that the pins are facing up and the port is facing away from you. Then solder the data pin to the far right pin. Next solder that ground wire to the far left pin. Lastly solder the power (5v) pin to the center left pin.
@@ -75,7 +75,7 @@ Finally, hot glue the acrylic disk to the front face of the NeoPixel. Make sure 
 
 ### Board Assembly
 
-In order to assemble a control board you will need to have some practice [soldering](https://www.youtube.com/watch?v=oqV2xU1fee8). This important becuase a poor solder joint on the board will create issues that will be hard to troubleshoot. Make sure to practice at it if you are new to electronics. 
+In order to assemble a control board you will need to have some practice [soldering](https://www.youtube.com/watch?v=oqV2xU1fee8). This important becuase a poor solder joint on the board will create issues that will be hard to troubleshoot. Make sure to practice at it if you are new to electronics.
 
 You will need:
 - 1 Printed Control Board or PCB for short
@@ -98,7 +98,7 @@ Now get your particle photon and any headers you might need, here we are showing
 
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board1.png)
 
-Next place your headers onto the boards and solder them into place, you will likely need to cut your headers down to size with the snips. **Make sure you have counted and cut correctly or there may be unforseen issues**. 
+Next place your headers onto the boards and solder them into place, you will likely need to cut your headers down to size with the snips. **Make sure you have counted and cut correctly or there may be unforseen issues**.
 
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/board2.png)
 
@@ -112,7 +112,7 @@ Lastly you wil need to solder the small screw terminal onto the control board.
 
 ![Image](https://github.com/CRB404/Workshop_Cafe_Table_Lights/blob/master/power2.png)
 
-Then simply use your screw driver to connect the red wire to the left port and the black wire to the right port. 
+Then simply use your screw driver to connect the red wire to the left port and the black wire to the right port.
 
 Your control board is done and can be connected to the pucks and flashed with the correct code. How to flash code is covered in [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment).
 
@@ -129,7 +129,7 @@ Installation begins with collecting all necessary parts. In order to install 8 l
 
 Begin by making sure your photon is correctly plugged into the the control board and the power supply is connected via the screw terminals. If this all sounds fuzzy then look [here](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-assembly).
 
-Next set the 
+Next set the
 
 ## Particle Usage and Managment
 
@@ -214,7 +214,7 @@ The first case checks the stateController array, looking for a value of 0. 1 or 
       }
 
       break;
-      
+
 The second case animates the puck with red light by pulsing the light. It then checks the stateController array for a value and resets the color to correlate to the corresponding state.
 
 ### UN occupied (Case 2)
@@ -234,7 +234,7 @@ The second case animates the puck with red light by pulsing the light. It then c
         for (int i = 0; i < strip0.numPixels(); i++) { // update color to the leds
           strip0.setPixelColor(i, 255, 255, 255); // defines new color
         }
-        
+
         // animates the light with a pluse using the occupied color
         for (int i = 10; i < 20; i++) { strip0.setBrightness(i); strip0.show(); delay(30); }
         for (int i = 20; i > 10; i--) { strip0.setBrightness(i); strip0.show(); delay(30); }
@@ -259,3 +259,22 @@ The third case checks the stateController array, looking for a value of 0. 1 or 
 The off state is triggered when the stateController has a value of 0. This then sets the puck color and brightness to 0.
 
 ## Troubleshooting
+
+### Puck Color
+
+
+
+### Wifi Connection Issues
+
+You will need to:
+- Get a micro USB Cables
+- Small philips and medium flathead screwdriver
+- Install [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/)
+
+
+
+Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
+![]()
+
+
+''''''
