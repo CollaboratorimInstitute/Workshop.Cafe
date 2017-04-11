@@ -267,21 +267,20 @@ All documentation for the [particle console](https://console.particle.io) and [p
 To View all of your your particles first login to the particle [console](console.particle.io). Then navigate to the product tab on the left had navigation and then select workshop cafe as the product.
 
 ![alt Particle Console Dashboard](docs/image/particleconsoledashboard.jpg)
+
 ### Using the console
+From the console you can manually reset devices, update firmware, and manage all connected particles.
 ![alt Particle Console Product Page](docs/image/particleconsoleproduct.jpg)
 
 
 ## Troubleshooting
-
 ### Puck Color
-
 - If the puck turns green on boot that is normal. Once it receives a command it will update the color.
 - If the puck is not turning on try a difference port or try replacing the cable.
 - If there is flickering or purple hue with the puck then replace it.
 
 
 ### Wifi Connection Issues
-
 You will need to:
 - Get a micro USB Cables
 - Small philips and medium flathead screwdriver
@@ -290,12 +289,12 @@ You will need to:
 Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
 
 Next run the following command and copy the 13 digit serial number.
-''particle identify''
+'particle identify'
 
 Now we can connect to the wifi by running.
-''particle serial wifi''
+particle serial wifi'
 
 Then we need to add the device to out account.
-''particle add device 0000000000000''
+particle add device 0000000000000'
 
 Done!
