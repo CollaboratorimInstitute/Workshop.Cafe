@@ -271,8 +271,6 @@ You will need to:
 - Small philips and medium flathead screwdriver
 - Install [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/)
 
-
-
 Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
 ![]()
 
