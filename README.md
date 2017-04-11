@@ -289,12 +289,12 @@ You will need to:
 Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
 
 Next run the following command and copy the 13 digit serial number.
-'particle identify'
+`particle identify`
 
 Now we can connect to the wifi by running.
-particle serial wifi'
+`particle serial wifi`
 
 Then we need to add the device to out account.
-particle add device 0000000000000'
+`particle add device 0000000000000`
 
-Done!
+Done! Now login to [console.particle.com](http://console.particle.com) and add the device to your product.
