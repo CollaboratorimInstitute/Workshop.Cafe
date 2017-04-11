@@ -275,4 +275,11 @@ Then connect to the device via mirco-usb. Then place the device WIFI setup mode 
 ![]()
 
 
-''''''
+'''particle identify'''
+
+
+'''particle serial wifi'''
+
+
+
+'''particle add device 00000000000000'''
