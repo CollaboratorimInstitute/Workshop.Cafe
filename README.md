@@ -264,12 +264,11 @@ The off state is triggered when the stateController has a value of 0. This then 
 
 All documentation for the [particle console](https://console.particle.io) and [particle-cli](https://github.com/spark/particle-cli)
 
+To View all of your your particles first login to the particle [console](console.particle.io). Then navigate to the product tab on the left had navigation and then select workshop cafe as the product.
+
 ![alt Particle Console Dashboard](docs/image/particleconsoledashboard.jpg)
 ### Using the console
 ![alt Particle Console Product Page](docs/image/particleconsoleproduct.jpg)
-
-### Updating Firmware
-![]()
 
 
 ## Troubleshooting
