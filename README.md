@@ -258,10 +258,27 @@ The third case checks the stateController array, looking for a value of 0. 1 or 
 
 The off state is triggered when the stateController has a value of 0. This then sets the puck color and brightness to 0.
 
+
+
+## Particle console
+
+All documentation for the [particle console](https://console.particle.io) and [particle-cli](https://github.com/spark/particle-cli)
+
+![alt Particle Console Dashboard](docs/image/particleconsoledashboard.jpg)
+### Using the console
+![alt Particle Console Product Page](docs/image/particleconsoleproduct.jpg)
+
+### Updating Firmware
+![]()
+
+
 ## Troubleshooting
 
 ### Puck Color
 
+- If the puck turns green on boot that is normal. Once it receives a command it will update the color.
+- If the puck is not turning on try a difference port or try replacing the cable.
+- If there is flickering or purple hue with the puck then replace it.
 
 
 ### Wifi Connection Issues
@@ -272,14 +289,14 @@ You will need to:
 - Install [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/)
 
 Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
-![]()
 
+Next run the following command and copy the 13 digit serial number.
+''particle identify''
 
-'''particle identify'''
+Now we can connect to the wifi by running.
+''particle serial wifi''
 
+Then we need to add the device to out account.
+''particle add device 0000000000000''
 
-'''particle serial wifi'''
-
-
-
-'''particle add device 00000000000000'''
+Done!
