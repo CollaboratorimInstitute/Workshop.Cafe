@@ -1,14 +1,14 @@
 # Workshop Cafe Table Light Documentation
 
 ## Index
-- [Overview and Purpose](https://github.com/CRB404/Workshop_Cafe_Table_Lights#overview-and-purpose)
-- [Components](https://github.com/CRB404/Workshop_Cafe_Table_Lights#components)
-- [Hardware Breakdown](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-breakdown)
-- [Hardware Assembly](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-assembly)
-- [Installation](https://github.com/CRB404/Workshop_Cafe_Table_Lights#installation)
-- [Particle Usage and Managment](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-usage-and-managment)
-- [Particle Code](https://github.com/CRB404/Workshop_Cafe_Table_Lights#particle-code)
-- [Troubleshooting](https://github.com/CRB404/Workshop_Cafe_Table_Lights#troubleshooting)
+- [Overview and Purpose](https://github.com/CollaboratorimInstitute/Workshop.Cafe#overview-and-purpose)
+- [Components](https://github.com/CollaboratorimInstitute/Workshop.Cafe#components)
+- [Hardware Breakdown](https://github.com/CollaboratorimInstitute/Workshop.Cafe#hardware-breakdown)
+- [Hardware Assembly](https://github.com/CollaboratorimInstitute/Workshop.Cafe#hardware-assembly)
+- [Installation](https://github.com/CollaboratorimInstitute/Workshop.Cafe#installation)
+- [Particle Usage and Managment](https://github.com/CollaboratorimInstitute/Workshop.Cafe#particle-usage-and-managment)
+- [Particle Code](https://github.com/CollaboratorimInstitute/Workshop.Cafe#particle-code)
+- [Troubleshooting](https://github.com/CollaboratorimInstitute/Workshop.Cafe#troubleshooting)
 
 ## Overview and Purpose
 This is a repository of information regarding the assembly and installation of custom lights and their controller purpose built for the Workshop Cafe. You can find reference material and links for ordering all components as well as detailed instructions on how to reproduce light pucks and control boards. Also included is a guide to installation and how to manage the particle account associated with the control boards. The last section of the documentation contains commented code and suggestions on changes that might be useful for future teams as well as general system troubleshooting notes.
@@ -118,7 +118,7 @@ Your control board is done and can be connected to the pucks and flashed with th
 
 ## Installation
 
-Installation begins with collecting all necessary parts. In order to install 8 lights you wil need:
+Installation begins with collecting all necessary parts. In order to install 8 lights you will need:
 - 1 control board
 - 8 light pucks
 - 1 particle photon
@@ -129,14 +129,21 @@ Installation begins with collecting all necessary parts. In order to install 8 l
 
 Begin by making sure your photon is correctly plugged into the the control board and the power supply is connected via the screw terminals. If this all sounds fuzzy then look [here](https://github.com/CRB404/Workshop_Cafe_Table_Lights#hardware-assembly).
 
-Next set the
 
-## Particle Usage and Managment
+## Particle Usage and Management
+
+- Login to [console.particl.io](http://console.particl.io)
+- Select the Products tab from the left hand navigation
+- Select "Collaboratorium Institute | Workshop Cafe" from the list of products
+- Again using the left hand navigation select "Firmware"
+- Then select upload and select the new firmware file you would like to upload.
+- After the code has uploaded click ready for deployment.
+- The code will auto deploy the next time all connected particle ping the particle cloud.
 
 ## Particle Code
-The code we created to run on each particle is compleately uniform. Every board is flashed with the same logic. You can find the code [here]().
+The code we created to run on each particle is completely uniform. Every board is flashed with the same logic. You can find the code [here](code/firmware.bin).
 
-The code controls the color and animation behavior of each of the 8 connected NeoPixel pucks. The main functional section of the code is contained in the function ***TableNote***. The code is formated to be workable in a C++ enviroment such as the one for Arduino and the Particle Photon. ***TableNote*** contains a switch function that relates to an array of known commands. Every Photon board has these commands programmed into the array.
+The code controls the color and animation behavior of each of the 8 connected NeoPixel pucks. The main functional section of the code is contained in the function ***TableNote***. The code is formated to be workable in a C++ environment such as the one for Arduino and the Particle Photon. ***TableNote*** contains a switch function that relates to an array of known commands. Every Photon board has these commands programmed into the array.
 
 `String cmd[] = {"green1", "pulse1", "white1", "green2", "pulse2", "white2", "green3", "pulse3", "white3", "green4", "pulse4", "white4", "green5", "pulse5", "white5", "green6", "pulse6", "white6", "green7", "pulse7", "white7", "green8", "pulse8", "white8", "off1", "off2", "off3", "off4", "off5", "off6", "off7", "off8"};`
 
