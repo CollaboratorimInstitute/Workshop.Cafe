@@ -281,6 +281,7 @@ From the console you can manually reset devices, update firmware, and manage all
 
 
 ## Troubleshooting
+
 ### Puck Color
 - If the puck turns green on boot that is normal. Once it receives a command it will update the color.
 - If the puck is not turning on try a difference port or try replacing the cable.
