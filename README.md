@@ -132,7 +132,7 @@ Begin by making sure your photon is correctly plugged into the the control board
 
 ## Particle Usage and Management
 
-- Login to [console.particl.io](http://console.particl.io)
+- Login to [console.particle.io](http://console.particle.io)
 - Select the Products tab from the left hand navigation
 - Select "Collaboratorium Institute | Workshop Cafe" from the list of products
 - Again using the left hand navigation select "Firmware"
@@ -294,7 +294,7 @@ You will need to:
 - Small philips and medium flathead screwdriver
 - Install [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/)
 
-Then connect to the device via mirco-usb. Then place the device WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
+Then connect to the device via micro-usb. Then place the device in WIFI setup mode by holding down the mode button until it starts flashing blue. Then release the button and press it a second time until the slow pulse changes to a quick pulse. Typically about 20 seconds. Next open a console on you computer (On Macintosh its called Terminal) and install the following command.
 
 Next run the following command and copy the 13 digit serial number.
 `particle identify`
